@@ -7,7 +7,7 @@
 
 using namespace std;
 
-SDL_Surface* LoadSurface(char *image_path) {
+SDL_Surface* LoadSurface(const char *image_path) {
   SDL_Surface* sur = IMG_Load(image_path);
   if(sur == NULL) {
     cout << "Cant load image " << image_path << endl;
@@ -18,7 +18,7 @@ SDL_Surface* LoadSurface(char *image_path) {
 SDL_Surface* getTextSurface(char *text)
 {
   SDL_Color color = { 255, 255, 255 };
-  TTF_Font* font = TTF_OpenFont("assets/Harukaze.ttf", 22);
+  TTF_Font* font = TTF_OpenFont("assets/Harukaze.ttf", 72);
 	SDL_Surface* surface = TTF_RenderText_Solid(font, text, color);
   if(surface == NULL) {
     cout << "Cant load text " << text << endl;
